@@ -27,7 +27,7 @@ const Chat = () => {
     
     // Establishes a WebSocket connection and handles user connection events
     useEffect(() => {
-        socketRef.current = io("http://192.168.124.237:8080");
+        socketRef.current = io(`${import.meta.env.VITE_SOCKET_IO_URL}`);
     
         socketRef.current.on("connect", () => {
             console.log("Connected to the server", socketRef.current.id);
