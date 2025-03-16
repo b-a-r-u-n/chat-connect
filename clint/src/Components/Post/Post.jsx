@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './post.css'
+import './Post.css'
 import like from '../../img/like.png';
 import comment from '../../img/comment.png';
 import notlike from '../../img/notlike.png';
