@@ -1,0 +1,26 @@
+.trend-card{
+    background-color: var(--cardColor);
+    padding: 0 2rem;
+    border-radius: 15px;
+}
+
+.trend-card>h2{
+    margin: 2rem 0;
+}
+
+.tags{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tags>h4{
+    font-size: larger;
+    font-weight: 800;
+}
+
+.tags>h5{
+    font-size: medium;
+    color: var(--gray);
+}

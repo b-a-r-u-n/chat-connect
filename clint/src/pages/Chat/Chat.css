@@ -1,0 +1,90 @@
+.chat{
+    padding: 1rem;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.chat-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+.chat .icons{
+    width: 25rem;
+}
+
+.chat-section{
+    display: grid;
+    grid-template-columns: 20rem auto;
+    gap: 2vw;
+}
+
+.chat-left{
+    background-color: var(--cardColor);
+    height: 85vh;
+    border-radius: 15px;
+    padding: 2.5vh 1.5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    overflow: scroll;
+}
+
+.chat-right{
+    background-color: var(--cardColor);
+    height: 85vh;
+    border-radius: 15px;
+    padding: 2.5vh 1.5vw;
+    overflow: scroll;
+}
+
+.empty-chat{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-chat>h1{
+    font-size: 3rem;
+}
+
+@media (max-width: 1024px){
+
+    .chat{
+        gap: 2vh;
+    }
+
+    .chat-header{
+        flex-direction: column;
+        width: 100%;
+        gap: 2vh;
+        height: auto;
+    }
+
+    .chat-section{
+        grid-template-columns: 1fr;
+    }
+
+    .chat .icons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hide{
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .chat-header .logosearch{
+        justify-content: flex-start;
+    }
+}
+

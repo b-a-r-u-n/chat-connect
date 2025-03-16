@@ -1,0 +1,36 @@
+.home{
+    position: relative;
+    display: grid;
+    grid-template-columns: 20rem auto 25rem;
+    gap: 2rem;
+    padding: 1rem;
+    max-height: 100vh;
+    /* overflow: auto; */
+}
+
+@media (max-width: 1440px){
+    .home{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px), (max-width: 768px), (max-width: 1024px){
+    .home{
+        grid-template-columns: 1fr;
+        /* gap: 0rem; */
+    }
+
+    .home > div:first-child {  /* ProfileSide */
+        order: 1;
+    }
+
+    .home > div:nth-child(2) {  /* PostSide */
+        order: 3;
+    }
+
+    .home > div:last-child {  /* RightSide */
+        order: 2;
+    }
+}
+
+

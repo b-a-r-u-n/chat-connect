@@ -1,0 +1,55 @@
+.update-model-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.update-model-form>:first-child{
+    background-color: var(--inputColor);
+    border: none;
+    outline: none;
+    height: 3.5rem;
+    padding-left: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.update-model-form>:nth-child(2){
+    background: transparent;
+    margin: 0.5rem 0;
+    width: 65%;
+}
+
+.update-model-form>button{
+    width: 30%;
+    font-weight: 700;
+    align-self: flex-end;
+}
+
+.image-preview{
+    position: relative;
+}
+
+.image-preview>img{
+    height: 40vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-preview>button{
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    font-size: xx-large;
+    /* background: transparent; */
+    border: none;
+    outline: none;
+    padding: 0;
+    height: 0;
+    color: #ff2c55;
+}
+
+.image-preview>button:hover{
+    cursor: pointer;
+}

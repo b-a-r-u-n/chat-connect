@@ -1,0 +1,55 @@
+/* .followers-card{
+    z-index: 100;
+} */
+
+.followers-card>h3{
+    font-size: 1.15rem;
+    margin-bottom: 1.3rem;
+}
+
+.followers-card>div{
+    height: 24vh;
+    overflow: scroll;
+}
+
+.followers-details{
+    display: grid;
+    grid-template-columns: 3rem auto 7rem;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.followers-details img{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: contain;
+}
+
+.followers-details img:hover{
+    cursor: pointer;
+}
+
+.follow-button>button{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.follow-button>button:hover{
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    box-shadow: 1px 1px 10px var(--orange);
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px), (max-width: 768px), (max-width: 1024px){
+    .followers-card{
+        display: none;
+    }
+}

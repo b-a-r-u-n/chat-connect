@@ -1,0 +1,61 @@
+.info-card{
+    background-color: var(--cardColor);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 15px;
+}
+
+.info-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-head>h2{
+    font-size: 1.6rem;
+}
+
+.info-head>button{
+    font-size: 1.4rem;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.info-head>button:hover{
+    cursor: pointer;
+}
+
+.info-details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.info{
+    display: flex;
+    gap: 0.5rem;
+    font-size: larger;
+}
+
+.info>p{
+    font-weight: 800;
+}
+
+.logout-btn{
+    display: flex;
+    justify-content: end;
+    /* margin-top: 6rem; */
+}
+
+.logout-btn>button{
+    /* margin-top: 6rem; */
+    font-size: larger;
+    font-weight: 600;
+}
+
+.logout-btn>button:hover{
+    cursor: pointer;
+}

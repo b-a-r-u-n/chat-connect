@@ -1,0 +1,58 @@
+.chat-left-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.person-details>div{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    padding: 2vh 1vw;
+    border-radius: 15px;
+}
+
+.person-details-hover>div:hover{
+    background-color: var(--hrColor);
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.image{
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.image span{
+    position: absolute;
+    background-color: greenyellow;
+    padding: 8px;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+}
+
+.image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.chat-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-info > :last-child{
+    font-size: smaller;
+    font-weight: 600;
+}
+
+.person-details>span{
+    margin-top: 1vh;
+    padding: 1px 0;
+    width: 100%;
+    background: var(--hrColor);
+    display: block;
+}

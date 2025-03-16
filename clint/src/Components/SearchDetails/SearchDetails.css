@@ -1,0 +1,28 @@
+.search-details{
+    padding: 1.5vh 1.1vw;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.search-details:hover{
+    background-color: var(--inputColor);
+    cursor: pointer;
+}
+
+.search-details-container{
+    display: flex;
+    justify-content: start;
+    gap: 1.3rem;
+}
+
+.search-details-container>img{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-position: center;
+    background-size: contain;
+}
+
+.search-details-container>.name{
+    color: black;
+}

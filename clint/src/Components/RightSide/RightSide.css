@@ -1,0 +1,95 @@
+.rightside{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.active-link i{
+    color: #fb5607;
+}
+
+.icons{
+    /* margin-top: 1rem; */
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.icons button i{
+    font-size: 1.7rem;
+}
+
+.icons button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.icons button:hover{
+    cursor: pointer;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.share-btn{
+    padding: 1rem 0;
+    width: 60%;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.share-btn:hover{
+    cursor: pointer;
+}
+
+.icons a:-webkit-any-link{
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 1440px){
+
+    .rightside > div:first-child{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: calc(50% - 2rem);
+        height: 4vh;
+    }
+
+    .rightside > div:nth-child(2){
+        display: none;
+    }
+
+    .rightside > div:last-child{
+        display: none;
+    }
+}
+
+@media (max-width: 480px), (max-width: 768px), (max-width: 1024px){
+
+    .rightside{
+        gap: 0;
+    }
+
+    .rightside > div:first-child{
+        /* background-color: blue; */
+        position: static;
+        /* margin-left: 1rem; */
+        width: 100%;
+        /* margin-top: 0;
+        top: -10vh; */
+    }
+
+    .rightside > div:nth-child(2){
+        display: none;
+    }
+
+    .rightside > div:last-child{
+        display: none;
+    }
+}

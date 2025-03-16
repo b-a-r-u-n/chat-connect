@@ -1,0 +1,42 @@
+:root {
+    --errorColor: #FF007F;
+    --textColor: #333333;
+  }
+  
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--backgroundColor);
+  }
+  
+  /* Bouncing error icon */
+  .error-icon {
+    font-size: 50px;
+    animation: bounce 1s ease-in-out infinite alternate;
+  }
+  
+  /* Text fade-in & slight shake effect */
+  .error-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--textColor);
+    margin-top: 15px;
+    animation: fadeIn 1.5s ease-in-out infinite alternate;
+  }
+  
+  /* Bounce animation */
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+  
+  /* Fade-in effect */
+  @keyframes fadeIn {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  

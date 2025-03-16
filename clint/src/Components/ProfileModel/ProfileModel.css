@@ -1,0 +1,102 @@
+.profile-model-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.header>h2{
+    font-size: 2rem;
+}
+
+.input-fieldd{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+ }
+
+.full-name>input, .workes-at>input, .address>input, .relationship>input{
+    background-color: var(--inputColor);
+    border: none;
+    outline: none;
+    height: 3.5rem;
+    padding-left: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.full-name, .address, .images{
+    display: flex;
+    justify-content: space-between;
+}
+
+.full-name>input, .address>input{
+    width: 49%;
+}
+
+.workes-at>input, .relationship>input{
+    width: 100%;
+}
+
+.images{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-img, .cover-img{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-img>p, .cover-img>p{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.update-btn{
+    display: flex;
+    justify-content: end;
+}
+
+.update-btn>button{
+    width: 25%;
+}
+
+.update-btn>button:hover{
+    cursor: pointer;
+}
+
+input[type="file"]{
+    background: transparent;
+    height: auto;
+    padding-left: 0;
+    border-radius: 0;
+    width: 100%;
+}
+
+/* .profile-img:last-child, .cover-img:last-child{
+    background: transparent;
+} */
+
+
+@media (max-width: 1024px){
+    .profile-img, .cover-img{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px){
+    .update-btn>button{
+        width: 50%;
+    }
+}

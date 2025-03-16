@@ -1,0 +1,26 @@
+.post-side{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 98vh;
+    overflow: auto;
+}
+
+.postside{
+    overflow: visible;
+}
+
+@media (max-width: 1440px){
+    .post-side{
+        margin-top: 5vh;
+        height: 93vh;
+    }
+}
+
+@media (max-width: 480px), (max-width: 768px), (max-width: 1024px){
+    .post-side{
+        height: 190vh;
+        overflow: visible;
+        margin-top: 0;
+    }
+}

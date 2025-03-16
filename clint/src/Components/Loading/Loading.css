@@ -1,0 +1,44 @@
+:root {
+  --primaryColor: #4C8BF5;
+  --textColor: #333333;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--backgroundColor);
+  position: relative;
+}
+
+/* Circular spinner animation */
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top: 6px solid var(--primaryColor);
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.6, 0.2, 0.4, 1) infinite;
+}
+
+/* Smooth text fade-in & pulse effect */
+.loading-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--textColor);
+  margin-top: 15px;
+  animation: fadeIn 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0.5; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.1); }
+}

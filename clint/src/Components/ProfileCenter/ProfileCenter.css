@@ -1,0 +1,28 @@
+.profile-center{
+    overflow: scroll;
+    max-height: 98vh;
+    /* display: flex;
+    flex-direction: column; */
+    gap: 1.5rem;
+}
+
+.profile-center>:last-child{
+    height: auto;
+    /* max-height: 100vh; */
+    /* background-color: aqua; */
+    /* overflow: scroll; */
+    /* background-color: red; */
+}
+
+@media (max-width: 1024px){
+
+    .profile-center{
+        height: auto;
+        overflow: visible;
+    }
+
+    .profile-center>:last-child{
+        /* max-height: 100vh; */
+        height: auto;
+    }
+}

@@ -1,0 +1,45 @@
+.profile{
+    position: relative;
+    display: grid;
+    grid-template-columns: 20rem auto 25rem;
+    gap: 2rem;
+    padding: 1rem;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.profile>:first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+@media (max-width: 768px){
+    .profile>:first-child{
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 1024px){
+    .profile{
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: scroll;
+    }
+
+    .profile>:first-child{
+        gap: 3vh;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px){
+    .profile{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .profile>:first-child{
+        gap: 5vh;
+    }
+}
+
+

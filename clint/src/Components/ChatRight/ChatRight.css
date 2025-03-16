@@ -1,0 +1,90 @@
+.chat-right-container{
+    height: 100%;
+    position: relative;
+}
+
+.chat-right-details{
+    height: 15%;
+}
+
+.left-arrow{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    display: none;
+}
+
+.left-arrow:hover{
+    cursor: pointer;
+}
+
+.chat-message-container{
+    height: 75%;
+    max-height: 75%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    overflow-y: auto;
+    z-index: 100;
+}
+
+
+.text-right{
+    text-align: right;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.chat-message{
+    display: inline-block;
+    color: whitesmoke;
+    max-width: 40%;
+    min-width: fit-content;
+    padding: 1vh 1vw;
+    font-weight: 600;
+    margin-bottom: 1vh;
+}
+
+.chat-message>span{
+    font-size: small;
+}
+
+.message-right{
+    background: linear-gradient(90deg, rgba(255, 94, 58, 0.91) 0%, rgb(249, 115, 5) 46%, rgb(255, 213, 0) 100%);
+    border-radius: 10px 0 10px 10px;
+}
+
+.message-left{
+    background: linear-gradient(90deg, rgba(64,60,131,1) 0%, rgba(69,69,255,1) 46%, rgba(0,212,255,1) 100%);
+    border-radius: 0 10px 10px 10px;
+}
+
+.send-message-container{
+    display: flex;
+    height: 10%;
+    align-items: center;
+}
+
+.send-message-container>button{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.send-message-container>button:hover{
+    cursor: pointer;
+}
+
+.send-icon{
+    color: orangered;
+}
+
+@media (max-width: 1024px){
+    .left-arrow{
+        display: block;
+    }
+}
+
