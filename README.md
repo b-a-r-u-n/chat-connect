@@ -25,7 +25,7 @@ This is a **modern, high-end social media website** built with **React.js, Tailw
 
 ### 1️⃣ Clone the Repository  
 ```sh
-git clone https://github.com/b-a-r-u-n/social-media-app.git
+git clone https://github.com/b-a-r-u-n/chat-connect.git
 
 ### 2️⃣ Install Dependencies
 
