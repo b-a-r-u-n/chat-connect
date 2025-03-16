@@ -1,4 +1,4 @@
-import { Message } from "../Models/Message.model.js";
+import { Message } from "../Models/message.model.js";
 import { apiError } from "../Utils/apiError.js";
 import { apiResponce } from "../Utils/apiResponce.js";
 import { asyncHandler } from "../Utils/asyncHandler.js";
