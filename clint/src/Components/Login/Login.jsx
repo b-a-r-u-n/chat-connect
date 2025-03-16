@@ -21,7 +21,7 @@ const Login = () => {
 
     const handaleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+        // console.log(formData);
         const response = await fetch(`${import.meta.env.VITE_BASE_URL}/auth/login`, {
             method: 'POST',
             credentials: 'include',
@@ -32,7 +32,7 @@ const Login = () => {
         })
 
         const data = await response.json();
-        console.log(data.data.user._id);
+        // console.log(data.data.user._id);
         
         sessionStorage.setItem('id', data.data.user._id);
         sessionStorage.setItem('isAdmin', data.data.user.isAdmin);
