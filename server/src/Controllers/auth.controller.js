@@ -111,19 +111,21 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const loggedInUser = await User.findById(user._id).select("-password -profileImage -coverImage -about -relationship -livesIn -worksAt -followers -following");
 
+    //localhost
     // const options = {
-    //     httpOnly: false,
-    //     secure: false,
-    //     sameSite: 'None',
-    //     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
-    // }
+    //     httpOnly: true,  // ✅ Prevents XSS attacks
+    //     secure: false,    // ✅ Required for `SameSite: None` (use HTTPS in production)
+    //     // sameSite: 'None', // ✅ Allows cross-origin requests
+    //     expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7-day expiration
+    // };
 
+    //production
     const options = {
-        httpOnly: true,  // ✅ Prevents XSS attacks
-        secure: false,    // ✅ Required for `SameSite: None` (use HTTPS in production)
-        // sameSite: 'None', // ✅ Allows cross-origin requests
-        expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7-day expiration
-    };
+        httpOnly: true,
+        secure: true,
+        sameSite: 'None',
+        expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+    }
 
     res
     .status(200)
