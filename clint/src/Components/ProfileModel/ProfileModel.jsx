@@ -97,7 +97,7 @@ function ProfileModel({modelOpened, setModelOpened, isMobile}) {
             <h2>Your Info</h2>
           </div>
           <div className='input-fieldd'>
-                <div className="full-name">
+                <div className="full-namee">
                     <input 
                         type="text" 
                         placeholder='First Name'
