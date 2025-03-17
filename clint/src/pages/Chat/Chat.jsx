@@ -22,6 +22,7 @@ const Chat = () => {
     const [sendMessage, setSendMessage] = useState(null);
     const [receiveMessage, setReceiveMessage] = useState(null);
     const [arrowClick, setArrowClick] = useState(false);
+    const [hide, setHide] = useState(false);
 
     // Fetches chat data when the component mounts
     useEffect(() => {
@@ -98,12 +99,10 @@ const Chat = () => {
 
     useEffect(() => {
         if(window.innerWidth < 1024){
-            const chatRight = document.querySelector('.chat-right');
-            chatRight.classList.toggle('hide');
+            setHide(true);
         }
-
     },[])
-    
+
 
   return (
     <>
@@ -158,7 +157,7 @@ const Chat = () => {
                             })
                         }
                     </div>
-                    <div className="chat-right">
+                    <div className={`chat-right ${hide ? "hide" : ""}`}>
                         {
                             currentChat ? 
                             <ChatRight 
