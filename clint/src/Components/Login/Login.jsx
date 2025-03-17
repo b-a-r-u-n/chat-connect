@@ -34,11 +34,8 @@ const Login = () => {
         const data = await response.json();
         // console.log(data.data.user._id);
         
-        sessionStorage.setItem('id', data.data.user._id);
-        sessionStorage.setItem('isAdmin', data.data.user.isAdmin);
-        
         if(data.success === false || data.success === 'false'){
-            alert(data.message);
+            alert(data?.message);
             setFormData({
                 email: '',
                 password: ''
@@ -46,7 +43,10 @@ const Login = () => {
             return;
         }
 
-        alert(data.message);
+        sessionStorage.setItem('id', data?.data?.user?._id);
+        sessionStorage.setItem('isAdmin', data?.data?.user?.isAdmin);
+
+        alert(data?.message);
         navigate('/home');
         setFormData({
             email: '',
