@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Chat.css'
-import {ChatLeft, ChatRight, LogoSearch} from '../../Components'
+import {ChatLeft, ChatRight, Error, Loading, LogoSearch} from '../../Components'
 import { useDispatch, useSelector } from 'react-redux'
 import { getChats, toggleChatPage } from '../../Features/chatSlice'
 import { io } from "socket.io-client";
@@ -10,8 +10,12 @@ const Chat = () => {
 
     const socketRef = useRef(null);
 
-    const chats = useSelector(state => state.chat.chats);
     const dispatch = useDispatch();
+
+    const chats = useSelector(state => state.chat.chats);
+    const loading = useSelector(state => state.chat.loading);
+    const error = useSelector(state => state.chat.error);
+    
 
     const [currentChat, setCurrentChat] = useState(null);
     const [onlineUsers, setOnlineUsers] = useState([]);
@@ -103,69 +107,79 @@ const Chat = () => {
 
   return (
     <>
-      <div className="chat">
-        <div className="chat-header">
-            <LogoSearch />
-            <div className="icons">
-                <button>
-                    <NavLink to="/home" className={({ isActive }) => isActive ? "active-link" : ""}>
-                        <i className="fa-solid fa-house"></i>
-                    </NavLink>
-                </button>
-                <button>
-                    <i className="fa-solid fa-bell"></i>
-                </button>
-                <button>
-                    <NavLink to="/chat" className={({isActive}) => isActive ? "active-link" : ""}>
-                        <i className="fa-solid fa-comment"></i>
-                    </NavLink>
-                </button>
-                <button>
-                    <i className="fa-solid fa-gear"></i>
-                </button>
-            </div>
-        </div>
-        <div className="chat-section">
-            <div className="chat-left">
-                <h1>
-                    Chats
-                </h1>
-                {
-                    chats?.map((chat) => {
-                        return (
-                            <ChatLeft 
-                                key={chat._id} 
-                                chat={chat}
-                                onClick={() => {
-                                    setCurrentChat(chat);
-                                    handaleHideDiv();
-                                }}
-                                online={checkOnlineStatus(chat)}
-                            />
-                        )
-                    })
-                }
-            </div>
-            <div className="chat-right">
-                {
-                    currentChat ? 
-                    <ChatRight 
-                        chat={currentChat}
-                        setSendMessage={setSendMessage}
-                        receiveMessage={receiveMessage}
-                        online={checkOnlineStatus(currentChat)}
-                        setArrowClick={setArrowClick}
-                    />
-                    :
-                    <div className='empty-chat'>
+      {
+          loading ? 
+            <Loading /> 
+          : 
+          (
+            error ? 
+                <Error /> 
+            :
+            <div className="chat">
+                <div className="chat-header">
+                    <LogoSearch />
+                    <div className="icons">
+                        <button>
+                            <NavLink to="/home" className={({ isActive }) => isActive ? "active-link" : ""}>
+                                <i className="fa-solid fa-house"></i>
+                            </NavLink>
+                        </button>
+                        <button>
+                            <i className="fa-solid fa-bell"></i>
+                        </button>
+                        <button>
+                            <NavLink to="/chat" className={({isActive}) => isActive ? "active-link" : ""}>
+                                <i className="fa-solid fa-comment"></i>
+                            </NavLink>
+                        </button>
+                        <button>
+                            <i className="fa-solid fa-gear"></i>
+                        </button>
+                    </div>
+                </div>
+                <div className="chat-section">
+                    <div className="chat-left">
                         <h1>
-                            Select a chat to start
+                            Chats
                         </h1>
-                    </div>  
-                }
+                        {
+                            chats?.map((chat) => {
+                                return (
+                                    <ChatLeft 
+                                        key={chat._id} 
+                                        chat={chat}
+                                        onClick={() => {
+                                            setCurrentChat(chat);
+                                            handaleHideDiv();
+                                        }}
+                                        online={checkOnlineStatus(chat)}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="chat-right">
+                        {
+                            currentChat ? 
+                            <ChatRight 
+                                chat={currentChat}
+                                setSendMessage={setSendMessage}
+                                receiveMessage={receiveMessage}
+                                online={checkOnlineStatus(currentChat)}
+                                setArrowClick={setArrowClick}
+                            />
+                            :
+                            <div className='empty-chat'>
+                                <h1>
+                                    Select a chat to start
+                                </h1>
+                            </div>  
+                        }
+                    </div>
+                </div>
             </div>
-        </div>
-      </div>
+          )
+        }
     </>
   )
 }

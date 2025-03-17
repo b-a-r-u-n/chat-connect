@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react'
 import './Home.css'
 import { PostSide, ProfileSide, RightSide } from '../../Components'
 // import Cookies from 'js-cookie';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUserDetails, toggleProfileCardVisible, toggleProfilePage } from '../../Features/homeSlice';
 import { toggleAnotherUserPage, toggleAnotherUserProfile } from '../../Features/anotherUsersSlice';
 import { toggleChatPage } from '../../Features/chatSlice';
+import { Error, Loading } from './Components';
 
 const Home = () => {
 
   const dispatch = useDispatch();
+
+  const isLoading = useSelector(state => state.home.isLoading);
+  const isError = useSelector(state => state.home.isError);
 
   
   useEffect(() => {
@@ -27,13 +31,23 @@ const Home = () => {
   
   return (
     <>
-      <div
-        className='home'
-      >
-        <ProfileSide />
-        <PostSide />
-        <RightSide />
-      </div>
+      {
+        isLoading ? 
+        <Loading /> 
+        : 
+        (
+          isError ? 
+          <Error /> 
+          :
+          <div
+            className='home'
+          >
+            <ProfileSide />
+            <PostSide />
+            <RightSide />
+          </div>
+        )
+      }
     </>
   )
 }
