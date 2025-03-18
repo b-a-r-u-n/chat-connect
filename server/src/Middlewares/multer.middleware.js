@@ -2,7 +2,8 @@ import multer from 'multer'
 
 const storage = multer.diskStorage({
     destination: function (req, res, cb) {
-      cb(null, './public/temp')
+      const uploadPath = path.join(process.cwd(), 'public', 'temp');
+      cb(null, uploadPath);
       // cb(null, '../../public/temp')
     },
     filename: function (req, file, cb) {
