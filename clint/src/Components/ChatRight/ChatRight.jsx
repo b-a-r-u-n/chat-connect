@@ -183,10 +183,12 @@ const ChatRight = ({chat, setSendMessage, receiveMessage, online, setArrowClick}
           <div>
             <FilePlus2 />
           </div>
-          <InputEmoji 
-            value={inputMessage}
-            onChange={(message) => setInputMessage(message)}
-          />
+          <div className="chat-input-emoji">
+            <InputEmoji 
+              value={inputMessage}
+              onChange={(message) => setInputMessage(message)}
+            />
+          </div>
           {
             inputMessage && (
               <button
