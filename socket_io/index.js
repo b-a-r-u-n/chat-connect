@@ -1,12 +1,15 @@
 import {createServer} from 'http';
 import {Server} from 'socket.io';
 import dotenv from 'dotenv';
+import express from 'express';
 
 dotenv.config({
     path: '.env'
 })
 
-const httpServer = createServer();
+const app = express();
+
+const httpServer = createServer(app);
 const io = new Server(httpServer, { 
     cors: {
         origin: process.env.CORS_ORIGIN,
@@ -52,6 +55,11 @@ io.on("connection", (socket) => {
         io.emit('get-users', onlineUsers);
     })
 })
+
+// ✅ Add a health check route for Render
+app.get("/", (req, res) => {
+    res.send("Socket.io server is running! 🚀");
+});
 
 httpServer.listen(process.env.PORT, '0.0.0.0' ,() => {
     console.log(`listening on *:${process.env.PORT}`);
