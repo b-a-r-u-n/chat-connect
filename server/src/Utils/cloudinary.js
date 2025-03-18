@@ -12,7 +12,12 @@ const uploadOnCloudinary = async (localFilePath) => {
         if(!localFilePath)
             return null;
         const uploadResult = await cloudinary.uploader.upload(localFilePath,{
-            resource_type: "auto"
+            resource_type: "auto",
+            quality: "auto:low",  // Automatically reduces quality to a low level
+            format: "webp",       // Converts the image to WebP for better compression
+            transformation: [
+                { fetch_format: "auto", quality: "auto:low" }  // Ensures better optimization
+            ]
         })
         fs.unlinkSync(localFilePath);
         

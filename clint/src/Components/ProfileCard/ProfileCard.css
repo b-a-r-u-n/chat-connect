@@ -133,5 +133,13 @@ hr{
     .hidden{
         display: none;
     }
+
+    .cover-image{
+        height: 10rem;
+    }
+
+    .cover-image-profile{
+        height: 10rem;
+    }
 }
 

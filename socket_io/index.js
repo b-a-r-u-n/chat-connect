@@ -5,7 +5,7 @@ import {Server} from 'socket.io';
 const httpServer = createServer();
 const io = new Server(httpServer, { 
     cors: {
-        origin: '*'
+        origin: process.env.CORS_ORIGIN
     }
 })
 
@@ -48,6 +48,6 @@ io.on("connection", (socket) => {
     })
 })
 
-httpServer.listen(8080, "0.0.0.0", () => {
+httpServer.listen(8080, () => {
     console.log('listening on *:8080');
 })
