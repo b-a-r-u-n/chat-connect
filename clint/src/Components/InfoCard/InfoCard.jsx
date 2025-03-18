@@ -47,7 +47,7 @@ const InfoCard = () => {
                     <i className="fa-solid fa-pencil"></i>
                 </button> */}
                 {
-                    user?._id === sessionStorage.getItem('id') || sessionStorage.getItem('isAdmin') ? 
+                    user?._id === sessionStorage.getItem('id') || sessionStorage.getItem('isAdmin') === true ? 
                     <button
                         onClick={() => setModelOpened(true)}
                     >

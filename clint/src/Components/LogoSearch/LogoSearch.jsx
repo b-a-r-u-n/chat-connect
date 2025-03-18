@@ -87,7 +87,11 @@ const LogoSearch = () => {
             {
               searchResults?.map((result) => {
                 return (
-                  <SearchDetails key={result._id} result={result}/>
+                  <SearchDetails 
+                    key={result._id} 
+                    result={result}
+                    setIsInputFocused={setIsInputFocused}  
+                  />
                 )
               })
             }

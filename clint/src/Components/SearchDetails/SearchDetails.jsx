@@ -3,7 +3,7 @@ import './SearchDetails.css';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const SearchDetails = ({result}) => {
+const SearchDetails = ({result, setIsInputFocused}) => {
 
     const chatPage = useSelector(state => state.chat.isChatPage); 
 
@@ -45,7 +45,7 @@ const SearchDetails = ({result}) => {
                 </div>
             </div>
             :
-            <Link to={`/profile/${result._id}`} className="search-details">
+            <Link to={`/profile/${result._id}`} className="search-details" onClick={() => setIsInputFocused(false)}>
                 <div className="search-details-container">
                     <img
                         src={`${result.profileImage}`}

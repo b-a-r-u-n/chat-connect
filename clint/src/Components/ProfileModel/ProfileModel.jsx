@@ -7,8 +7,10 @@ import { getUserDetails } from '../../Features/homeSlice';
 
 function ProfileModel({modelOpened, setModelOpened, isMobile}) {
 
-  const user = useSelector(state => state.home.user);
   const dispatch = useDispatch();
+
+  const user = useSelector(state => state.home.user);
+  
   // console.log("Profile user", user);
   
 
