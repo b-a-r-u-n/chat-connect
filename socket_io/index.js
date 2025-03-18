@@ -1,11 +1,16 @@
-import { log } from 'console';
 import {createServer} from 'http';
 import {Server} from 'socket.io';
+import {dotenv} from 'dotenv';
+
+dotenv.config({
+    path: '.env'
+})
 
 const httpServer = createServer();
 const io = new Server(httpServer, { 
     cors: {
-        origin: process.env.CORS_ORIGIN
+        origin: process.env.CORS_ORIGIN,
+        credentials: true
     }
 })
 
