@@ -87,9 +87,22 @@
     color: orangered;
 }
 
+@media (max-width: 480px){
+    .chat-input-emoji{
+        width: 85%;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 768px){
+    .chat-input-emoji{
+        width: 90%;
+    }
+}
+
 @media (max-width: 1024px){
     .left-arrow{
         display: block;
     }
 }
+
 
