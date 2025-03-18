@@ -53,6 +53,6 @@ io.on("connection", (socket) => {
     })
 })
 
-httpServer.listen(8080, '0.0.0.0' ,() => {
-    console.log('listening on *:8080');
+httpServer.listen(process.env.PORT, '0.0.0.0' ,() => {
+    console.log(`listening on *:${process.env.PORT}`);
 })
