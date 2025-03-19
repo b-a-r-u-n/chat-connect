@@ -5,7 +5,8 @@ const ChatLeft = ({chat, onClick, online}) => {
   
   
   // console.log("chat", chat);
-  const [chatUser, setChatUser] = useState(null);  
+  const [chatUser, setChatUser] = useState(null); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const chatId = chat?.members.find((chatId) => chatId !== sessionStorage.getItem('id'));
@@ -20,10 +21,13 @@ const ChatLeft = ({chat, onClick, online}) => {
           credentials: 'include'
         })
         const data = await responce.json();
-        setChatUser(data.data);
+        setChatUser(data?.data);
         
       } catch (error) {
         console.log(error);
+      }
+      finally{
+        setLoading(false);
       }
     }
     getChatUser(chatId);
@@ -42,7 +46,14 @@ const ChatLeft = ({chat, onClick, online}) => {
               <img src={`${chatUser?.profileImage}`} alt="" />
             </div>
             <div className="chat-info">
-              <h3>{chatUser?.firstName + " " + chatUser?.lastName}</h3>
+              <h3>
+                {
+                  loading ? 
+                  "Loading..."
+                  :
+                  chatUser?.firstName + " " + chatUser?.lastName
+                }
+              </h3>
               <p>
                 { 
                   online ? "Online" : "Offline"
