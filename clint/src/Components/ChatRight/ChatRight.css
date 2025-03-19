@@ -93,6 +93,16 @@
     color: orangered;
 }
 
+@media (max-width: 1024px){
+    .left-arrow{
+        display: block;
+    }
+
+    .chat-message{
+        max-width: 50%;
+    }
+}
+
 @media (max-width: 480px){
     .chat-input-emoji{
         width: 85%;
@@ -110,16 +120,6 @@
 
     .chat-message{
         max-width: 60%;
-    }
-}
-
-@media (max-width: 1024px){
-    .left-arrow{
-        display: block;
-    }
-
-    .chat-message{
-        max-width: 50%;
     }
 }
 
