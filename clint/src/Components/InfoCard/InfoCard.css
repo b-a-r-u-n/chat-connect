@@ -59,3 +59,9 @@
 .logout-btn>button:hover{
     cursor: pointer;
 }
+
+@media (max-width: 1024px){
+    .info{
+        font-size: medium;
+    }
+}
