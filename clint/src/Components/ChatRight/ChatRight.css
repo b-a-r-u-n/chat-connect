@@ -1,6 +1,7 @@
 .chat-right-container{
     height: 100%;
     position: relative;
+    width: 100%;
 }
 
 .chat-right-details{
@@ -24,9 +25,10 @@
     max-height: 75%;
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
+    overflow-x: hidden;
     overflow-y: auto;
     z-index: 100;
+    width: 100%;
 }
 
 
@@ -42,10 +44,14 @@
     display: inline-block;
     color: whitesmoke;
     max-width: 40%;
-    min-width: fit-content;
+    min-width: 5%;
     padding: 1vh 1vw;
     font-weight: 600;
     margin-bottom: 1vh;
+}
+
+.chat-message>p{
+    text-align: left;
 }
 
 .chat-message>span{
