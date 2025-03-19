@@ -68,7 +68,7 @@ const ProfileCard = () => {
             </h2>
             <p>
               {
-                user?.workesAt || "Software Engineer"
+                user?.workesAt || "Available for work"
               }
             </p>
         </div>
